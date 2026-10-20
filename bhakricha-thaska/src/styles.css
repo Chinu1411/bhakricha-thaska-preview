@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fff5e6;
+  --color-burgundy: #651c32;
+  --color-chilli: #c9362b;
+  --color-mustard: #d8a52b;
+  --color-brown: #38251e;
+}
+:root { font-family: "DM Sans", "Noto Sans Devanagari", sans-serif; color: #38251e; background: #fff5e6; font-synthesis: none; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body { margin: 0; }
+button, input, textarea { font: inherit; }
+button, summary { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 5px; }
+img, svg { display: block; max-width: 100%; }
+button { color: inherit; }
+p { line-height: 1.8; margin: 0 0 1.2rem; }
+h1, h2, h3 { margin: 0; }
+h2 { font-family: Georgia, "Noto Sans Devanagari", serif; font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 400; line-height: 1.16; letter-spacing: -.035em; margin-bottom: 1.4rem; color: #651c32; }
+h3 { font-size: 1.3rem; line-height: 1.4; font-weight: 700; }
+:focus-visible { outline: 3px solid #c9362b; outline-offset: 5px; }
+.container { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+.section { padding-block: 96px; scroll-margin-top: 10px; }
+.eyebrow { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .17em; color: #8d3529; margin-bottom: 1rem; }
+.site-header { position: sticky; top: 0; z-index: 20; background: #fff5e6f5; border-bottom: 1px solid #651c3220; backdrop-filter: blur(12px); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 88px; gap: 20px; }
+.brand-link { display: flex; align-items: center; gap: 12px; }
+.brand-link img { border-radius: 50%; }
+.brand-link span[lang] { display: block; font-family: "Noto Sans Devanagari", sans-serif; font-size: 1.12rem; font-weight: 800; color: #651c32; }
+.brand-link small { display: block; font-size: .58rem; letter-spacing: .14em; padding-top: 4px; }
+.desktop-nav { display: flex; gap: 32px; font-size: .87rem; }
+.mobile-nav { display: none; }
+.hero { padding-top: 65px; padding-bottom: 0; overflow: hidden; background: radial-gradient(ellipse at 85% 25%, #d8a52b15, transparent 65%); }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 620px; gap: 25px; }
+.hero h1 { font-family: "Noto Sans Devanagari", sans-serif; font-size: clamp(3.8rem, 7.7vw, 7rem); color: #651c32; font-weight: 800; line-height: 1.4; letter-spacing: -.06em; }
+.hero h1 span { color: #c9362b; }
+.english-name { letter-spacing: .22em; font-weight: 700; font-size: .83rem; margin-top: 8px; }
+.tagline { font-family: Georgia, serif; font-style: italic; color: #651c32; font-size: clamp(1.25rem, 2vw, 1.7rem); }
+.hero-description { max-width: 480px; }
+.actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; margin-block: 28px 48px; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 24px; border: 1px solid #651c32; background: #651c32; color: #fff5e6; border-radius: 4px; padding: 15px 23px; min-height: 48px; font-size: .88rem; font-weight: 700; transition: background .2s, transform .2s; }
+.button:hover { background: #8c2842; text-decoration: none; transform: translateY(-2px); }
+.button:disabled { background: #ded2c5; color: #61554d; border-color: #ded2c5; cursor: not-allowed; transform: none; }
+.text-link { color: #651c32; font-weight: 700; font-size: .9rem; }
+.hero-visual { position: relative; min-width: 0; align-self: stretch; display: grid; align-content: center; }
+.heritage { width: 100%; opacity: .65; position: absolute; top: 0; left: 0; }
+.hero-food { position: relative; margin-top: 70px; animation: arrive .9s ease both; }
+.hero-food > img { width: 100%; height: auto; aspect-ratio: 1.15; object-fit: cover; border-radius: 48% 48% 40% 40%; border: 8px solid #fff5e6; }
+.food-art { position: relative; width: 100%; }
+.food-art svg { width: 100%; height: auto; }
+.food-art > span { display: block; text-align: center; padding: 0 10px 15px; font-size: .64rem; letter-spacing: .02em; color: #655044; }
+.roundel { position: absolute; bottom: 85px; right: 0; width: 113px; height: 113px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #d8a52b; color: #38251e; border: 1px dashed #651c32; outline: 5px solid #d8a52b; border-radius: 50%; transform: rotate(10deg); font-family: "Noto Sans Devanagari", sans-serif; font-size: 1.3rem; font-weight: 700; }
+.roundel span { font-family: "DM Sans", sans-serif; font-size: .65rem; margin-top: 6px; }
+.flavour-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px; background: #651c32; color: #fff5e6; padding: 19px 24px; margin-top: 35px; font-size: .8rem; letter-spacing: .13em; }
+.flavour-strip i { color: #e4bc54; }
+.section-title { max-width: 720px; margin-bottom: 32px; }
+.notice { border-left: 3px solid #d8a52b; background: #d8a52b13; padding: 12px 18px; font-size: .82rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0; }
+.filters button { border: 1px solid #651c3240; border-radius: 30px; padding: 11px 20px; min-height: 44px; background: transparent; font-size: .82rem; }
+.filters button[aria-pressed="true"] { background: #651c32; color: #fff5e6; }
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.product-card { border: 1px solid #651c3220; border-radius: 10px; overflow: hidden; background: #fffbf4; transition: transform .2s; }
+.product-card:hover { transform: translateY(-5px); }
+.product-image { background: #f2e4ce; }
+.product-image > img { width: 100%; aspect-ratio: 640/533; object-fit: cover; }
+.product-body { padding: 25px; }
+.product-body .eyebrow { font-size: .6rem; letter-spacing: .09em; }
+.product-body p { font-size: .88rem; }
+.marathi-label { color: #8d3529; margin-block: 8px 16px; font-family: "Noto Sans Devanagari", sans-serif; }
+.price { border-top: 1px solid #651c3220; padding-top: 16px; font-size: .82rem; font-weight: 700; color: #651c32; }
+.story { background: #efe0c7; }
+.story-grid { display: grid; grid-template-columns: .95fr 1fr; gap: 85px; align-items: center; }
+.story-art { transform: rotate(-3deg); border: 1px solid #651c3230; padding: 16px; }
+.story-art img { width: 100%; height: auto; }
+.story-grid p { font-size: .94rem; }
+.highlights { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.highlights article { border-top: 1px solid #651c3240; padding-top: 24px; }
+.highlights article > span { color: #8d3529; font-family: Georgia, serif; font-size: 2rem; }
+.highlights h3 { margin-block: 20px 12px; font-size: 1.1rem; color: #651c32; }
+.highlights p { font-size: .86rem; }
+.gallery-section { background: #651c32; color: #fff5e6; }
+.gallery-section h2, .gallery-section .eyebrow { color: #fff5e6; }
+.gallery-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 20px; align-items: center; }
+.gallery-item { background: #efe0c7; border: 0; border-radius: 7px; overflow: hidden; width: 100%; text-align: left; color: #38251e; padding: 0; }
+.gallery-item > img { width: 100%; aspect-ratio: 640/533; object-fit: cover; }
+.gallery-label { display: flex; justify-content: space-between; padding: 18px 22px; font-weight: 700; font-size: .9rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+.contact-details { margin: 32px 0; }
+.contact-details > div { padding: 14px 0; border-bottom: 1px solid #651c3220; }
+.contact-details dt { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: #8d3529; margin-bottom: 6px; }
+.contact-details dd { margin: 0; font-size: .9rem; overflow-wrap: anywhere; }
+.map-link { display: block; padding-top: 8px; text-decoration: underline; }
+.social-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.contact-form { background: #fffbf4; border: 1px solid #651c3220; padding: 34px; border-radius: 8px; }
+.contact-form h3 { color: #651c32; margin-bottom: 15px; }
+.contact-form p { font-size: .82rem; }
+.contact-form label { display: block; font-size: .8rem; font-weight: 700; margin: 18px 0 8px; }
+input, textarea { display: block; width: 100%; border: 1px solid #8b7967; border-radius: 4px; background: #fffdf8; padding: 12px; color: #38251e; }
+textarea { resize: vertical; }
+input:disabled, textarea:disabled { background: #eee8df; cursor: not-allowed; }
+.contact-form .button { margin-top: 22px; width: 100%; }
+.form-status { margin-top: 16px; }
+footer { background: #38251e; color: #fff5e6; padding-block: 55px; }
+.footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 45px; }
+footer img { border-radius: 8px; margin-bottom: 20px; }
+footer p { font-size: .8rem; margin-bottom: 8px; }
+footer p[lang] { font-size: 1.3rem; }
+footer nav { display: flex; flex-direction: column; gap: 18px; align-items: start; font-size: .85rem; }
+.footer-note { color: #e1cbb5; }
+.lightbox { margin: auto; border: 0; border-radius: 10px; background: #fff5e6; padding: 0; width: min(850px, calc(100% - 32px)); max-height: 90dvh; color: #38251e; }
+.lightbox::backdrop { background: #241113de; }
+.lightbox-inner { padding: 24px; }
+.lightbox-inner > img { width: 100%; max-height: 60dvh; object-fit: contain; }
+.lightbox .food-art { max-width: 650px; margin: auto; }
+.lightbox h2 { font-size: 2rem; margin-top: 15px; }
+.close-button { display: block; margin-left: auto; border: 1px solid #651c32; border-radius: 4px; background: transparent; min-height: 44px; padding: 8px 16px; }
+.skip-link { position: fixed; left: 12px; top: -100px; z-index: 100; background: #651c32; color: white; padding: 14px; }
+.skip-link:focus { top: 12px; }
+@keyframes arrive { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@media (max-width: 1000px) {
+  .hero-grid { min-height: 560px; }
+  .story-grid, .contact-grid { gap: 40px; }
+  .product-grid { gap: 15px; }
+  .product-body { padding: 18px; }
+  .highlights { grid-template-columns: repeat(2, 1fr); }
+  .roundel { width: 90px; height: 90px; bottom: 120px; }
+}
+@media (max-width: 700px) {
+  html { scroll-padding-top: 90px; }
+  .container { width: calc(100% - 36px); }
+  .section { padding-block: 64px; }
+  .header-inner { min-height: 76px; }
+  .brand-link img { width: 48px; height: 48px; }
+  .brand-link { gap: 8px; }
+  .brand-link span[lang] { font-size: .95rem; }
+  .brand-link small { font-size: .47rem; }
+  .desktop-nav { display: none; }
+  .mobile-nav { display: block; position: relative; }
+  .mobile-nav summary { font-size: .8rem; padding: 12px 0 12px 12px; }
+  .mobile-nav nav { position: absolute; right: 0; top: 50px; width: 190px; padding: 12px; background: #fff5e6; box-shadow: 0 12px 25px #38251e25; border: 1px solid #651c3220; border-radius: 5px; }
+  .mobile-nav nav a { display: block; padding: 12px; }
+  .hero { padding-top: 40px; padding-bottom: 0; }
+  .hero-grid, .story-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+  .hero h1 { font-size: clamp(3.6rem, 15vw, 5.8rem); }
+  .hero-visual { min-height: 400px; max-width: 540px; width: 100%; margin-inline: auto; }
+  .hero-food { margin-top: 55px; }
+  .roundel { bottom: 35px; right: 8px; }
+  .actions { margin-bottom: 0; }
+  .flavour-strip { gap: 15px; font-size: .62rem; margin-top: 15px; }
+  .product-grid, .gallery-grid { grid-template-columns: 1fr; }
+  .product-card { max-width: 500px; width: 100%; margin-inline: auto; }
+  .story-art { width: min(85%, 390px); margin: 0 auto 20px; }
+  .highlights { gap: 24px; }
+  .gallery-grid { max-width: 500px; margin-inline: auto; }
+  .contact-form { padding: 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-note { grid-column: 1 / -1; }
+}
+@media (max-width: 380px) { .highlights, .footer-grid { grid-template-columns: 1fr; } .hero-visual { min-height: 320px; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
